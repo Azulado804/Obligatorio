@@ -1,4 +1,4 @@
-﻿using Almacen.Dominio;
+﻿using Obligatorio.Dominio;
 
 namespace Obligatorio.Dominio
 {

@@ -1,4 +1,4 @@
-﻿namespace Almacen.Dominio
+﻿namespace Obligatorio.Dominio
 {
     public class Cliente
     {

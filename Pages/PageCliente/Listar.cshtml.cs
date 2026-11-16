@@ -1,8 +1,8 @@
-using Almacen.Dominio;
+using Obligatorio.Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Almacen.Pages.PageCliente
+namespace Obligatorio.Pages.PageCliente
 {
     public class ListarModel : PageModel
     {
