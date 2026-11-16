@@ -1,4 +1,4 @@
-﻿using Almacen.Dominio;
+﻿using Obligatorio.Dominio;
 
 namespace Obligatorio.Dominio
 {
@@ -44,19 +44,26 @@ namespace Obligatorio.Dominio
             }
             return false;
         }
-        public bool ModificarCliente(int pId, string pNombre, string pApellido, string pDireccion, string pTelefono)
+        public bool ModificarCliente(int pId, string pNombre, string pDocumento, string pDireccion, string pTelefono, string pEmail)
         {
             Cliente ClienteAModificar = BuscarCliente(pId);
             if (ClienteAModificar != null)
             {
                 ClienteAModificar.Nombre = pNombre;
-                ClienteAModificar.Apellido = pApellido;
-                ClienteAModificar.Direccion = pDireccion;
+                ClienteAModificar.Documento = pDocumento;
+                ClienteAModificar.Email = pEmail;
                 ClienteAModificar.Telefono = pTelefono;
+                ClienteAModificar.Direccion = pDireccion;
+                
+                
                 return true;
             }
             return false;
         }
         #endregion
-    }
+        
+        
+
+        
+}
 }

@@ -1,5 +1,5 @@
 ﻿@page
-@model Almacen.Pages.PageCliente.EliminarModel
+@model Obligatorio.Pages.PageCliente.EliminarModel
 @{
     ViewData["Title"] = "Eliminar Cliente";
 }
@@ -20,10 +20,10 @@
             @Html.DisplayFor(model => model.cliente.Nombre)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cliente.Apellido)
+            @Html.DisplayNameFor(model => model.cliente.Documento)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cliente.Apellido)
+            @Html.DisplayFor(model => model.cliente.Documento)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.cliente.Direccion)

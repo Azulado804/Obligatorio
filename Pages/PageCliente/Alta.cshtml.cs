@@ -1,8 +1,8 @@
-using Almacen.Dominio;
+using Obligatorio.Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Almacen.Pages.PageCliente
+namespace Obligatorio.Pages.PageCliente
 {
     public class AltaModel : PageModel
     {
@@ -27,9 +27,13 @@ namespace Almacen.Pages.PageCliente
                 {
                     throw new Exception("Debe ingresar el Nombre del Cliente");
                 }
-                if (Request.Form["apellido"] == "")
+                if (Request.Form["documento"] == "")
                 {
-                    throw new Exception("Debe ingresar el Apellido del Cliente");
+                    throw new Exception("Debe ingresar el Documento del Cliente");
+                }
+                if (Request.Form["email"] == "")
+                {
+                    throw new Exception("Debe ingresar el Email del Cliente");
                 }
                 if (Request.Form["direccion"] == "")
                 {
@@ -43,11 +47,12 @@ namespace Almacen.Pages.PageCliente
 
                 int Id = int.Parse(Request.Form["id"]);
                 string Nombre = Request.Form["nombre"];
-                string Apellido = Request.Form["apellido"];
+                string Documento = Request.Form["documento"];
                 string Direccion = Request.Form["direccion"];
                 string Telefono = Request.Form["telefono"];
+                string Email = Request.Form["email"];
 
-                Cliente unCliente = new Cliente(Id, Nombre, Apellido, Direccion, Telefono);
+                Cliente unCliente = new Cliente(Id, Nombre, Documento, Direccion, Telefono,Email);
 
                 Controladora unaControladora = new Controladora();
 

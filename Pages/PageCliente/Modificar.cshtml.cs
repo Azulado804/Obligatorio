@@ -1,8 +1,8 @@
-using Almacen.Dominio;
+using Obligatorio.Dominio;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Almacen.Pages.PageCliente
+namespace Obligatorio.Pages.PageCliente
 {
     public class ModificarModel : PageModel
     {
@@ -29,9 +29,13 @@ namespace Almacen.Pages.PageCliente
                 {
                     throw new Exception("Debe ingresar el Nombre del Cliente");
                 }
-                if (Request.Form["apellido"] == "")
+                if (Request.Form["Documento"] == "")
                 {
-                    throw new Exception("Debe ingresar el Apellido del Cliente");
+                    throw new Exception("Debe ingresar el Documento del Cliente");
+                }
+                if (Request.Form["Email"] == "")
+                {
+                    throw new Exception("Debe ingresar el Email del Cliente");
                 }
                 if (Request.Form["direccion"] == "")
                 {
@@ -44,13 +48,14 @@ namespace Almacen.Pages.PageCliente
 
                 int Id = int.Parse(Request.Form["id"]);
                 string Nombre = Request.Form["nombre"];
-                string Apellido = Request.Form["apellido"];
+                string Documento = Request.Form["documento"];
+                string Email = Request.Form["email"];
                 string Direccion = Request.Form["direccion"];
                 string Telefono = Request.Form["telefono"];
 
                 Controladora unaControladora = new Controladora();
 
-                unaControladora.ModificarCliente(Id, Nombre, Apellido, Direccion, Telefono);
+                unaControladora.ModificarCliente(Id, Nombre, Documento, Direccion, Telefono, Email);
                 return Redirect("/PageCliente/Listar");
 
             }

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Almacen.Dominio;
+using Obligatorio.Dominio;
 
-namespace Almacen.Pages.PageCliente
+namespace Obligatorio.Pages.PageCliente
 {
     public class EliminarModel : PageModel
     {
