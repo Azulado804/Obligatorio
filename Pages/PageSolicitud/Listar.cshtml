@@ -1,0 +1,21 @@
+@page
+@model Obligatorio.Pages.PageSolicitud.ListarModel
+<h1>Listar Solicitudes</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Cliente</th>
+        <th>Equipamiento</th>
+        <th>Estado</th>
+    </tr>
+    @foreach (var s in Model.Lista)
+    {
+        <tr>
+            <td>@s.Id</td>
+            <td>@s.Cliente.Nombre</td>
+            <td>@s.Equipamiento.Nombre</td>
+            <td>@s.Estado</td>
+        </tr>
+    }
+</table>

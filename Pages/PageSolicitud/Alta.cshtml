@@ -1,0 +1,52 @@
+@page
+@model Obligatorio1_P3.Pages.PageSolicitud.AltaModel
+@{
+    ViewData["Title"] = "Alta Solicitud";
+}
+
+<h2>Alta Solicitud</h2>
+
+@if (!string.IsNullOrEmpty(Model.Mensaje))
+{
+    <div class="alert alert-danger">@Model.Mensaje</div>-
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label>Id</label>
+        <input name="id" type="number" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Id Cliente</label>
+        <input name="idCliente" type="number" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Id Equipamiento</label>
+        <input name="idEquipamiento" type="number" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha Solicitud</label>
+        <input name="fechaSolicitud" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha Inicio</label>
+        <input name="fechaInicio" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Fecha Fin</label>
+        <input name="fechaFin" type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Estado</label>
+        <input name="estado" type="text" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="Listar" class="btn btn-secondary">Volver</a>
+</form>
