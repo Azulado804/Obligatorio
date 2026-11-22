@@ -27,9 +27,8 @@ namespace Obligatorio.Pages.PageEquipamiento
         {
             try
             {
-                if (Id <= 0)
-                    throw new Exception("Debe ingresar un Id válido");
-
+                
+                    
                 if (string.IsNullOrWhiteSpace(Nombre))
                     throw new Exception("Debe ingresar el Nombre");
 
@@ -37,7 +36,7 @@ namespace Obligatorio.Pages.PageEquipamiento
                     throw new Exception("Debe ingresar la Descripcion");
 
                 Controladora unaControladora = new Controladora();
-                unaControladora.AltaEquipamiento(new Equipamiento(Id, Nombre.Trim(), Descripcion.Trim()));
+                unaControladora.AltaEquipamiento(new Equipamiento(Nombre,Descripcion));
 
                 return Redirect("/PageEquipamento/Listar");
             }

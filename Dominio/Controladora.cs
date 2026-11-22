@@ -8,6 +8,7 @@ namespace Obligatorio.Dominio
         private static readonly List<Cliente> listaClientes = new List<Cliente>();
         private static readonly List<Equipamiento> listaEquipamientos = new List<Equipamiento>();
         private static readonly List<Solicitud> listaSolicitudes = new List<Solicitud>();
+        private static readonly List<StockEquipamiento> listaStock = new List<StockEquipamiento>();
 
         #region Clientes
 
@@ -132,6 +133,44 @@ namespace Obligatorio.Dominio
             return true;
         }
 
+        #endregion
+
+        #region StockEquipamiento
+
+        public List<StockEquipamiento> ListarStock()
+        {
+            return listaStock;
+        }
+
+        public StockEquipamiento BuscarStockPorEquipamiento(int pEquipamientoId)
+        {
+            foreach (StockEquipamiento unStock in listaStock)
+            {
+                if (unStock.EquipamientoId == pEquipamientoId)
+                {
+                    return unStock;
+                }
+            }
+
+            return null;
+        }
+
+        public bool ActualizarStockEquipamiento(int pEquipamientoId, int pCantidad)
+        {
+            StockEquipamiento unStock = BuscarStockPorEquipamiento(pEquipamientoId);
+
+            if (unStock == null)
+            {
+                unStock = new StockEquipamiento();
+                unStock.EquipamientoId = pEquipamientoId;
+                unStock.Equipamiento = BuscarEquipamiento(pEquipamientoId);
+                listaStock.Add(unStock);
+            }
+
+            unStock.ActualizarStock(pCantidad);
+            return true;
+        }
+         
         #endregion
     
     #region Solicitudes

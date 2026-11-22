@@ -1,0 +1,27 @@
+@page
+@using Obligatorio.Dominio
+@model Obligatorio.Pages.PageEquipamiento.ActualizarStockModel
+@{
+}
+
+<h1>Actualizar Stock</h1>
+
+<form method="post" asp-page-handler="Actualizar">
+    <label></label><br>
+    <select name="equipamientoId">
+        <option value="">Seleccione...</option>
+       @foreach (Equipamiento Item in Model.ListaEquipamientos)
+                {
+            <option value="@Item.Id">@Item.Nombre - Stock: @Item.Stock</option>
+        }
+    </select>
+    <br><br>
+
+    <label>Cantidad a agregar</label><br>
+    <input type="number" name="cantidad" />
+    <br><br>
+
+    <input type="submit" value="Actualizar Stock" />
+</form>
+
+<p>@Model.Mensaje</p>
