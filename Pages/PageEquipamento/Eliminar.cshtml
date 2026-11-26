@@ -1,0 +1,66 @@
+@page
+@model Obligatorio.Pages.PageEquipamiento.EliminarModel
+@{
+    ViewData["Title"] = "Eliminar Equipamiento";
+}
+<div class="text left">
+    <h1 class="display-4 text-center">Eliminar Equipamiento</h1>
+    <hr />
+    @if (Model.equipamiento is not null)
+    {
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.equipamiento.Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.equipamiento.Id)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.equipamiento.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.equipamiento.Nombre)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.equipamiento.Descripcion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.equipamiento.Descripcion)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.equipamiento.Stock)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.equipamiento.Stock)
+            </dd>
+        </dl>
+        <hr />
+
+        <form method="post">
+            <input type="hidden" name="id" value="@Model.equipamiento.Id" />
+            <div class="row">
+                <div class="mt-2">
+                    <button type="submit" asp-page-handler="Eliminar" class="btn btn-danger">Eliminar</button>
+                    <a class="btn btn-warning" asp-page="./Listar">Volver</a>
+                </div>
+            </div>
+        </form>
+    }
+    else if (Model.Lista.Count > 0)
+    {
+        <form method="get">
+            <label for="id">Seleccione el equipamiento que desea eliminar:</label>
+            <select class="form-select" name="id" id="id">
+                @foreach (var item in Model.Lista)
+                {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+            <button class="btn btn-primary mt-2" type="submit">Continuar</button>
+        </form>
+    }
+    else
+    {
+        <p>No hay equipamientos para eliminar.</p>
+    }
+</div>

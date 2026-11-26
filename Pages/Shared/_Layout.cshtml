@@ -23,30 +23,34 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Clientes</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="clientesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Clientes</a>
+                            <ul class="dropdown-menu" aria-labelledby="clientesDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageCliente/Listar">Listar Clientes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageCliente/Alta">Alta de Clientes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageCliente/Modificar">Modificar Clientes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageCliente/Eliminar">Eliminar Clientes</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-dark" href="#" id="equipamientoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Equipamiento</a>
                             <ul class="dropdown-menu" aria-labelledby="equipamientoDropdown">
-                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamiento/Listar">Listar</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamiento/Modificar">Modificar</a></li>
-                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamiento/Eliminar">Eliminar</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamento/Listar">Listar Equipamiento</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamento/Alta">Alta Equipamiento</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamento/Modificar">Modificar Equipamiento</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageEquipamento/Eliminar">Eliminar Equipamiento</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-page="/PageEquipamiento/Alta">Alta Equipamiento</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link text-dark" asp-area="" asp-page="/PageEquipamiento/ActualizarStock">Stock</a>
-</li>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-dark" href="#" id="solicitudDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solicitud</a>
-    <ul class="dropdown-menu" aria-labelledby="solicitudDropdown">
-        <li><a class="dropdown-item" asp-area="" asp-page="/PageSolicitud/Listar">Listar</a></li>
-        <li><a class="dropdown-item" asp-area="" asp-page="/PageSolicitud/Eliminar">Eliminar</a></li>
-    </ul>
-</li>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/PageEquipamento/ActualizarStock">Stock</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-dark" href="#" id="solicitudDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Solicitud</a>
+                            <ul class="dropdown-menu" aria-labelledby="solicitudDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageSolicitud/Listar">Listar Solicitudes</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/PageSolicitud/Alta">Alta Solicitud</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
